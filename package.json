@@ -1,0 +1,18 @@
+{
+  "name": "microsoft-graph-api-auth-spa",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Trevor Wong",
+  "license": "MIT",
+  "dependencies": {
+    "@azure/msal-browser": "^2.12.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "yargs": "^16.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.4",
+    "postcss": "^8.2.7",
+    "tailwindcss": "^2.0.3"
+  }
+}

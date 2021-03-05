@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Microsoft Graph API Auth with SPA</title>
+
+    <script type="text/javascript" src="https://alcdn.msauth.net/browser/2.0.0-beta.4/js/msal-browser.js" integrity="sha384-7sxY2tN3GMVE5jXH2RL9AdbO6s46vUh9lUid4yNCHJMUzDoj+0N4ve6rLOmR88yN" crossorigin="anonymous"></script>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="SHORTCUT ICON"
+      href="https://c.s-microsoft.com/favicon.ico?v2"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="max-w-lg mx-auto h-screen border shadow-xl">
+      <div class="flex justify-center">
+        <button
+          id="sign-in"
+          class="my-8 text-white bg-indigo-500 px-4 py-2 rounded"
+          onclick="signIn()"
+        >
+          Sign In
+        </button>
+      </div>
+
+      <div id="welcome" class="hidden">
+        <nav class="p-2 flex items-center justify-between bg-indigo-100">
+          <h1 class="text-xl">Microsoft identity platform</h1>
+          <button
+            id="sign-out"
+            class="text-white bg-yellow-500 px-4 py-2 rounded"
+            onclick="signOut()"
+          >
+            Sign Out
+          </button>
+        </nav>
+
+        <h2 class="mt-4 py-2 text-lg text-center bg-gray-100">
+          JavaScript SPA calling Microsoft Graph API with MSAL.js
+        </h2>
+
+        <div
+          class="mt-4 py-4 b-gray-100 border rounded-lg flex flex-col justify-center text-center space-y-3"
+        >
+          <h3 class="font-medium text-xl">
+            Welcome, <span id="username">Trevor</span>!
+          </h3>
+
+          <button
+            id="profile-button"
+            class="mx-auto text-white bg-indigo-500 px-4 py-2 rounded"
+            onclick="showProfile()"
+          >
+            See Profile
+          </button>
+          <ul id="profile-content" class="hidden">
+            <li><span class="font-medium">Title:</span> <span class="title"></span></li>
+            <li><span class="font-medium">Mail:</span> <span class="mail"></span></li>
+            <li><span class="font-medium">Phone:</span> <span class="phone"></span></li>
+            <li>
+              <span class="font-medium">Location:</span> <span class="location"></span>
+            </li>
+          </ul>
+
+          <button
+            id="mail-button"
+            class="mx-auto text-white bg-indigo-500 px-4 py-2 rounded"
+            onclick="showMail()"
+          >
+            Read Mail
+          </button>
+          <div id="mail-content" class="hidden">
+            <ul class="list"></ul>
+            <div class="empty hidden">You mailbox is empty!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
